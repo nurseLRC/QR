@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LRC QR Scanner</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/html5-qrcode"></script>
+</head>
+<body>
+  <div id="loadingOverlay" class="loading-overlay hidden">
+    <div class="loading-box">
+      <div class="loader"></div>
+      <div>กำลังโหลดข้อมูล...</div>
+    </div>
+  </div>
+
+  <div class="app">
+    <div class="topbar">
+      <h1>สแกนเพื่อเปิดข้อมูล</h1>
+      <p>
+        ศูนย์การเรียนรู้ฝึกทักษะทางการพยาบาล<br>
+        คณะพยาบาลศาสตร์ มหาวิทยาลัยรามคำแหง
+      </p>
+    </div>
+
+    <div class="card notice">
+      <b>วิธีใช้:</b> กดเปิดกล้องสแกน หรือกรอกรหัสเอง เช่น <span>SUP-0001</span><br>
+      บน iPhone แนะนำให้เปิดหน้านี้ด้วย Safari/Chrome โดยตรง
+    </div>
+
+    <div class="card scanner-card" id="scannerCard">
+      <div id="reader"></div>
+
+      <div class="actions">
+        <button type="button" class="btn-primary" data-action="startScanner">เปิดกล้องสแกน</button>
+        <button type="button" class="btn-secondary" data-action="stopScanner">หยุดกล้อง</button>
+      </div>
+
+      <div class="manual">
+        <input id="manualCode" placeholder="หรือกรอกรหัส เช่น SUP-0001" autocomplete="off">
+        <button type="button" class="btn-secondary" data-action="lookupManual">ค้นหา</button>
+      </div>
+
+      <div id="scanStatus" class="status">
+        กด “เปิดกล้องสแกน” แล้วนำ QR ให้อยู่ในกรอบ
+      </div>
+    </div>
+
+    <div id="result"></div>
+
+    <footer class="footer">
+      © 2026 Developed by Lect. Siyathorn Ponjaroenpaisarn | RU Nurse
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
